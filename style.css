@@ -396,34 +396,94 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .link-sale      { color: var(--black) !important; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Promo card */
-.mega-menu__promo {
-  width: 150px;
+/* ── Preview panel ── */
+.mega-menu__preview {
+  width: 168px;
+  flex-shrink: 0;
   background: var(--gray-50);
   border-left: 1px solid var(--gray-200);
-  padding: 22px 16px;
-  display: flex;
-  align-items: flex-start;
-}
-.mega-menu__promo-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 14px 12px;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 4px;
-  width: 100%;
-  transition: box-shadow var(--transition);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .18s ease;
 }
-.mega-menu__promo-card:hover { box-shadow: var(--shadow-md); }
-.mega-menu__promo-img {
+.mega-menu__preview.is-active { opacity: 1; }
+
+.preview-img {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--gray-100);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background .2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.preview-img svg { transition: transform .2s ease; }
+.preview-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Category color themes */
+.preview-img[data-cat="watch-gold"]    { background: #f5edd8; }
+.preview-img[data-cat="watch-silver"]  { background: #eaedf0; }
+.preview-img[data-cat="watch-rose"]    { background: #f5e5e0; }
+.preview-img[data-cat="watch-black"]   { background: #2a2a2a; }
+.preview-img[data-cat="watch-black"] svg { stroke: #888; }
+.preview-img[data-cat="watch-bicolor"] { background: linear-gradient(135deg,#f5edd8 50%,#eaedf0 50%); }
+.preview-img[data-cat="watch-vintage"] { background: #ede8dc; }
+.preview-img[data-cat="watch-leather"] { background: #e8ddd0; }
+.preview-img[data-cat="glasses-sol-f"] { background: #fde8d8; }
+.preview-img[data-cat="glasses-sol-m"] { background: #dce8f0; }
+.preview-img[data-cat="glasses-grau-f"]{ background: #ede0f0; }
+.preview-img[data-cat="glasses-grau-m"]{ background: #dce8e0; }
+.preview-img[data-cat="glasses-oval"]  { background: #f0ece0; }
+.preview-img[data-cat="glasses-aviador"]{ background: #dce8f0; }
+.preview-img[data-cat="glasses-boxy"]  { background: #e8e0f0; }
+.preview-img[data-cat="glasses-round"] { background: #f0e8e0; }
+.preview-img[data-cat="glasses-cat"]   { background: #f5e0e8; }
+.preview-img[data-cat="glasses-tort"]  { background: #e8dcc8; }
+.preview-img[data-cat="gift-f"]        { background: #f5e0ea; }
+.preview-img[data-cat="gift-m"]        { background: #dce8f5; }
+.preview-img[data-cat="gift-kit"]      { background: #f0ece0; }
+.preview-img[data-cat="new"]           { background: #e0f0e8; }
+.preview-img[data-cat="star"]          { background: #f5f0dc; }
+.preview-img[data-cat="sale"]          { background: #f5e0dc; }
+
+.preview-info {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.preview-sub {
+  font-size: 9.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: var(--gray-400);
 }
-.mega-menu__promo-card strong { font-size: 12px; display: block; letter-spacing: .02em; }
-.mega-menu__promo-card small  { font-size: 11px; color: var(--gray-600); display: block; margin-top: 3px; }
+.preview-label {
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: var(--black);
+  line-height: 1.3;
+}
+.preview-cta {
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 1px;
+  align-self: flex-start;
+}
 
 /* ═══════════════════════════════
    MOBILE DRAWER

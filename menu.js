@@ -1,30 +1,31 @@
 /* Saint Germain — High-Conversion Menu JS */
 
 // ── SVG icons por categoria ──────────────────────────────────────────────
+const STROKE = '#555';
 const CAT_SVG = {
   // Relógios
-  'watch-gold':    watchSvg('#8a6a20'),
-  'watch-silver':  watchSvg('#6a7a8a'),
-  'watch-rose':    watchSvg('#a06070'),
-  'watch-black':   watchSvg('#aaa'),
-  'watch-bicolor': watchSvg('#8a6a20'),
-  'watch-vintage': watchSvg('#7a6040'),
-  'watch-leather': watchSvg('#8a6040'),
+  'watch-gold':    watchSvg(STROKE),
+  'watch-silver':  watchSvg(STROKE),
+  'watch-rose':    watchSvg(STROKE),
+  'watch-black':   watchSvg(STROKE),
+  'watch-bicolor': watchSvg(STROKE),
+  'watch-vintage': watchSvg(STROKE),
+  'watch-leather': watchSvg(STROKE),
   // Óculos
-  'glasses-sol-f':  glassesSvg('#c07050'),
-  'glasses-sol-m':  glassesSvg('#405070'),
-  'glasses-grau-f': glassesSvg('#806090'),
-  'glasses-grau-m': glassesSvg('#406050'),
-  'glasses-oval':   glassesSvg('#6a5040'),
-  'glasses-aviador':glassesSvg('#405070'),
-  'glasses-boxy':   glassesSvg('#504060'),
-  'glasses-round':  glassesSvg('#705040'),
-  'glasses-cat':    glassesSvg('#904060'),
-  'glasses-tort':   glassesSvg('#704020'),
+  'glasses-sol-f':  glassesSvg(STROKE),
+  'glasses-sol-m':  glassesSvg(STROKE),
+  'glasses-grau-f': glassesSvg(STROKE),
+  'glasses-grau-m': glassesSvg(STROKE),
+  'glasses-oval':   glassesSvg(STROKE),
+  'glasses-aviador':glassesSvg(STROKE),
+  'glasses-boxy':   glassesSvg(STROKE),
+  'glasses-round':  glassesSvg(STROKE),
+  'glasses-cat':    glassesSvg(STROKE),
+  'glasses-tort':   glassesSvg(STROKE),
   // Misc
-  'gift-f':   giftSvg('#a06070'),
-  'gift-m':   giftSvg('#406080'),
-  'gift-kit': giftSvg('#806040'),
+  'gift-f':   giftSvg(STROKE),
+  'gift-m':   giftSvg(STROKE),
+  'gift-kit': giftSvg(STROKE),
   'new':      newSvg(),
   'star':     starSvg(),
   'sale':     saleSvg(),
@@ -60,19 +61,19 @@ function giftSvg(stroke) {
 }
 
 function newSvg() {
-  return `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#40806a" stroke-width="1.2" stroke-linecap="round">
+  return `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="${STROKE}" stroke-width="1.2" stroke-linecap="round">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>`;
 }
 
 function starSvg() {
-  return `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#8a7820" stroke-width="1.2" stroke-linecap="round">
+  return `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="${STROKE}" stroke-width="1.2" stroke-linecap="round">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>`;
 }
 
 function saleSvg() {
-  return `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#a04030" stroke-width="1.2" stroke-linecap="round">
+  return `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="${STROKE}" stroke-width="1.2" stroke-linecap="round">
     <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
     <line x1="7" y1="7" x2="7.01" y2="7"/>
   </svg>`;

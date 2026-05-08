@@ -430,31 +430,8 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   pointer-events: none;
 }
 
-/* Category color themes */
-.preview-img[data-cat="watch-gold"]    { background: #f5edd8; }
-.preview-img[data-cat="watch-silver"]  { background: #eaedf0; }
-.preview-img[data-cat="watch-rose"]    { background: #f5e5e0; }
-.preview-img[data-cat="watch-black"]   { background: #2a2a2a; }
-.preview-img[data-cat="watch-black"] svg { stroke: #888; }
-.preview-img[data-cat="watch-bicolor"] { background: linear-gradient(135deg,#f5edd8 50%,#eaedf0 50%); }
-.preview-img[data-cat="watch-vintage"] { background: #ede8dc; }
-.preview-img[data-cat="watch-leather"] { background: #e8ddd0; }
-.preview-img[data-cat="glasses-sol-f"] { background: #fde8d8; }
-.preview-img[data-cat="glasses-sol-m"] { background: #dce8f0; }
-.preview-img[data-cat="glasses-grau-f"]{ background: #ede0f0; }
-.preview-img[data-cat="glasses-grau-m"]{ background: #dce8e0; }
-.preview-img[data-cat="glasses-oval"]  { background: #f0ece0; }
-.preview-img[data-cat="glasses-aviador"]{ background: #dce8f0; }
-.preview-img[data-cat="glasses-boxy"]  { background: #e8e0f0; }
-.preview-img[data-cat="glasses-round"] { background: #f0e8e0; }
-.preview-img[data-cat="glasses-cat"]   { background: #f5e0e8; }
-.preview-img[data-cat="glasses-tort"]  { background: #e8dcc8; }
-.preview-img[data-cat="gift-f"]        { background: #f5e0ea; }
-.preview-img[data-cat="gift-m"]        { background: #dce8f5; }
-.preview-img[data-cat="gift-kit"]      { background: #f0ece0; }
-.preview-img[data-cat="new"]           { background: #e0f0e8; }
-.preview-img[data-cat="star"]          { background: #f5f0dc; }
-.preview-img[data-cat="sale"]          { background: #f5e0dc; }
+/* Todas as categorias: preto e branco apenas */
+.preview-img[data-cat] { background: var(--gray-100); }
 
 .preview-info {
   padding: 14px 14px 16px;

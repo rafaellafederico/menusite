@@ -354,18 +354,16 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
    MEGA MENU
 ═══════════════════════════════ */
 .mega-menu {
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   min-width: 720px;
   padding: 0;
   border-radius: 12px;
   overflow: hidden;
 }
-/* Prevent mega-menu from going off-screen */
-.nav__item:nth-last-child(-n+3) > .mega-menu {
+/* Last items: align right so they don't overflow */
+.nav__item:nth-last-child(-n+4) > .mega-menu {
   left: auto;
   right: 0;
-  transform: none;
 }
 .mega-menu__inner {
   display: flex;

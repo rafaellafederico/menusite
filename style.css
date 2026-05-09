@@ -463,6 +463,90 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 /* ═══════════════════════════════
+   MOBILE CATEGORY PHOTO CARDS
+═══════════════════════════════ */
+.mobile-cat-strip {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--gray-200);
+  flex-shrink: 0;
+}
+.mobile-cat-strip::-webkit-scrollbar { display: none; }
+
+.mobile-cat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.mobile-cat-card__img {
+  width: 88px;
+  height: 110px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Placeholder quando nao ha foto */
+.mobile-cat-card__img img[src=""] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mobile-cat-card__img img[src=""]::before {
+  content: '';
+}
+.mobile-cat-card__img:has(img[src=""]) {
+  background: var(--gray-100);
+}
+.mobile-cat-card__img:has(img[src=""])::after {
+  content: 'Foto';
+  position: absolute;
+  font-family: var(--font);
+  font-size: 10px;
+  color: var(--gray-400);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.mobile-cat-card__img img:not([src=""]) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+.mobile-cat-card:active .mobile-cat-card__img img { transform: scale(1.04); }
+
+.mobile-cat-card__label {
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--gray-800);
+  text-align: center;
+  white-space: nowrap;
+}
+.mobile-cat-card--sale .mobile-cat-card__label {
+  color: var(--black);
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+/* ═══════════════════════════════
    MOBILE DRAWER
 ═══════════════════════════════ */
 .overlay {

@@ -390,8 +390,9 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   font-size: 11px;
   color: var(--gray-800);
   border-radius: 3px;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
   text-transform: uppercase;
+  white-space: nowrap;
   transition: background var(--transition), color var(--transition);
 }
 .mega-menu__col ul li a:hover { background: var(--gray-100); color: var(--black); }
@@ -505,20 +506,12 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   justify-content: center;
 }
 
-/* Placeholder quando nao ha foto */
-.mobile-cat-card__img img[src=""] {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.mobile-cat-card__img img[src=""]::before {
-  content: '';
-}
-.mobile-cat-card__img:has(img[src=""]) {
-  background: var(--gray-100);
-}
-.mobile-cat-card__img:has(img[src=""])::after {
+/* Esconde img quebrado quando sem foto */
+.mobile-cat-card__img img[src=""],
+.mobile-cat-card__img img:not([src]) { display: none; }
+
+/* Placeholder "Foto" */
+.mobile-cat-card__img::after {
   content: 'Foto';
   position: absolute;
   font-family: var(--font);
@@ -527,8 +520,10 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   letter-spacing: .06em;
   text-transform: uppercase;
 }
+/* Esconde placeholder quando tem foto */
+.mobile-cat-card__img:has(img:not([src=""]):not(:not([src])))::after { display: none; }
 
-.mobile-cat-card__img img:not([src=""]) {
+.mobile-cat-card__img img[src]:not([src=""]) {
   width: 100%;
   height: 100%;
   object-fit: cover;

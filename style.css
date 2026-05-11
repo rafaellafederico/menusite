@@ -902,3 +902,49 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   cursor: pointer;
 }
 .photo-mgr-panel__save:hover { opacity: .8; }
+
+.photo-mgr-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0 2px;
+  border-top: 1px solid var(--gray-200);
+  margin-top: 4px;
+}
+.photo-mgr-sep span {
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  white-space: nowrap;
+}
+
+.photo-mgr-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.photo-mgr-section__title {
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  padding: 8px 0 4px;
+  border-bottom: 1px solid var(--gray-100);
+  margin-bottom: 4px;
+}
+
+.photo-slot--sm .photo-slot__thumb {
+  width: 36px;
+  height: 44px;
+}
+.photo-slot--sm .photo-slot__name {
+  font-size: 10px;
+}
+.photo-slot--sm .photo-slot__label {
+  font-size: 9px;
+  padding: 4px 9px;
+}
+.photo-slot--sm .photo-slot__remove {
+  font-size: 9px;
+}

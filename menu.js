@@ -79,6 +79,10 @@ function saleSvg() {
   </svg>`;
 }
 
+function slugify(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 // ── Search suggestions ────────────────────────────────────────────────────
 const POPULAR_SEARCHES = [
   { label: 'Oculos de Sol Feminino', href: '/oculos/oculos-de-sol/oculos-de-sol-feminino/' },
@@ -137,6 +141,9 @@ const POPULAR_SEARCHES = [
     const subEl     = menu.querySelector('[data-preview-sub]');
     if (!panel) return;
 
+    const navItem     = menu.closest('.nav__item');
+    const sectionSlug = slugify(navItem ? navItem.querySelector('.nav__link').textContent.trim() : '');
+
     // Links com data-label dentro deste mega-menu
     const links = menu.querySelectorAll('[data-label]');
     let hideTimer = null;
@@ -153,7 +160,13 @@ const POPULAR_SEARCHES = [
       labelEl.textContent = label || '';
       subEl.textContent   = sub   || '';
       imgEl.setAttribute('data-cat', cat || '');
-      imgEl.innerHTML = CAT_SVG[cat] || CAT_SVG['star'];
+      const deskKey = label ? ('sg_desk_' + sectionSlug + '_' + slugify(label)) : null;
+      const stored  = deskKey ? localStorage.getItem(deskKey) : null;
+      if (stored) {
+        imgEl.innerHTML = `<img src="${stored}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">`;
+      } else {
+        imgEl.innerHTML = CAT_SVG[cat] || CAT_SVG['star'];
+      }
       panel.classList.add('is-active');
     }
 
@@ -201,7 +214,7 @@ const POPULAR_SEARCHES = [
 
 // ── Photo manager ─────────────────────────────────────────────────────────
 (function initPhotoManager() {
-  const SLOTS = [
+  const MOBILE_SLOTS = [
     { key: 'cat-rel-f',  cardIdx: 0 },
     { key: 'cat-rel-m',  cardIdx: 1 },
     { key: 'cat-oculos', cardIdx: 2 },
@@ -210,69 +223,139 @@ const POPULAR_SEARCHES = [
   ];
   const cards = document.querySelectorAll('.mobile-cat-card');
 
-  function applyPhoto(key, dataUrl) {
-    const slot = SLOTS.find(s => s.key === key);
-    if (!slot) return;
-    const card = cards[slot.cardIdx];
-    if (card) card.querySelector('img').src = dataUrl || '';
+  function updateThumb(key, dataUrl) {
     const thumb = document.getElementById('thumb-' + key);
-    if (thumb) {
-      thumb.src = dataUrl || '';
-      thumb.classList.toggle('has-photo', !!dataUrl);
-      const emptyTxt = thumb.parentElement.querySelector('.photo-slot__empty-txt');
-      if (emptyTxt) emptyTxt.style.display = dataUrl ? 'none' : '';
-    }
+    if (!thumb) return;
+    thumb.src = dataUrl || '';
+    thumb.classList.toggle('has-photo', !!dataUrl);
+    const txt = thumb.parentElement.querySelector('.photo-slot__empty-txt');
+    if (txt) txt.style.display = dataUrl ? 'none' : '';
   }
 
-  // Apply stored photos on load
-  SLOTS.forEach(({ key }) => {
+  function applyMobilePhoto(key, dataUrl) {
+    const slot = MOBILE_SLOTS.find(s => s.key === key);
+    if (slot) {
+      const card = cards[slot.cardIdx];
+      if (card) card.querySelector('img').src = dataUrl || '';
+    }
+    updateThumb(key, dataUrl);
+  }
+
+  // Apply stored mobile photos on load
+  MOBILE_SLOTS.forEach(({ key }) => {
     const stored = localStorage.getItem('sg_photo_' + key);
-    if (stored) applyPhoto(key, stored);
+    if (stored) applyMobilePhoto(key, stored);
   });
 
+  // Build desktop slots dynamically from mega-menu links
+  const desktopContainer = document.getElementById('photoMgrDesktopSlots');
+  if (desktopContainer) {
+    document.querySelectorAll('.nav__item.has-mega').forEach(item => {
+      const navLabel    = item.querySelector('.nav__link').textContent.trim();
+      const sectionSlug = slugify(navLabel);
+      const links       = [...item.querySelectorAll('[data-label]')];
+      if (!links.length) return;
+
+      const section = document.createElement('div');
+      section.className = 'photo-mgr-section';
+      const heading = document.createElement('div');
+      heading.className = 'photo-mgr-section__title';
+      heading.textContent = navLabel;
+      section.appendChild(heading);
+
+      links.forEach(link => {
+        const label   = link.dataset.label;
+        const deskKey = 'sg_desk_' + sectionSlug + '_' + slugify(label);
+        const stored  = localStorage.getItem(deskKey);
+        const slot = document.createElement('div');
+        slot.className = 'photo-slot photo-slot--sm';
+        slot.innerHTML = `
+          <div class="photo-slot__thumb">
+            <img id="thumb-${deskKey}" src="${stored || ''}" alt="" class="${stored ? 'has-photo' : ''}" />
+            <span class="photo-slot__empty-txt"${stored ? ' style="display:none"' : ''}>Foto</span>
+          </div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">${label}</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher <input type="file" accept="image/*" data-dkey="${deskKey}" /></label>
+              <button class="photo-slot__remove" data-dkey="${deskKey}">Remover</button>
+            </div>
+          </div>`;
+        section.appendChild(slot);
+      });
+      desktopContainer.appendChild(section);
+    });
+
+    desktopContainer.querySelectorAll('input[data-dkey]').forEach(input => {
+      input.addEventListener('change', () => {
+        const file = input.files[0];
+        const key  = input.dataset.dkey;
+        if (!file || !key) return;
+        const reader = new FileReader();
+        reader.onload = e => {
+          localStorage.setItem(key, e.target.result);
+          updateThumb(key, e.target.result);
+        };
+        reader.readAsDataURL(file);
+        input.value = '';
+      });
+    });
+
+    desktopContainer.querySelectorAll('.photo-slot__remove[data-dkey]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.dkey;
+        localStorage.removeItem(key);
+        updateThumb(key, '');
+      });
+    });
+  }
+
   // Panel open/close
-  const overlay  = document.getElementById('photoMgrOverlay');
-  const openBtn  = document.getElementById('photoMgrBtn');
-  const closeBtn = document.getElementById('photoMgrClose');
-  const closeBtn2= document.getElementById('photoMgrClose2');
+  const overlay   = document.getElementById('photoMgrOverlay');
+  const openBtn   = document.getElementById('photoMgrBtn');
+  const closeBtn  = document.getElementById('photoMgrClose');
+  const closeBtn2 = document.getElementById('photoMgrClose2');
   if (!overlay || !openBtn) return;
 
-  openBtn.addEventListener('click',  () => overlay.classList.add('is-open'));
-  closeBtn.addEventListener('click', () => overlay.classList.remove('is-open'));
-  closeBtn2.addEventListener('click',() => overlay.classList.remove('is-open'));
-  overlay.addEventListener('click',  e => { if (e.target === overlay) overlay.classList.remove('is-open'); });
+  openBtn.addEventListener('click',   () => overlay.classList.add('is-open'));
+  closeBtn.addEventListener('click',  () => overlay.classList.remove('is-open'));
+  closeBtn2.addEventListener('click', () => overlay.classList.remove('is-open'));
+  overlay.addEventListener('click',   e => { if (e.target === overlay) overlay.classList.remove('is-open'); });
 
-  // File inputs
-  overlay.querySelectorAll('input[type="file"]').forEach(input => {
+  // Mobile file inputs
+  overlay.querySelectorAll('input[type="file"][data-slot]').forEach(input => {
     input.addEventListener('change', () => {
       const file = input.files[0];
       const key  = input.dataset.slot;
       if (!file || !key) return;
       const reader = new FileReader();
       reader.onload = e => {
-        const dataUrl = e.target.result;
-        localStorage.setItem('sg_photo_' + key, dataUrl);
-        applyPhoto(key, dataUrl);
+        localStorage.setItem('sg_photo_' + key, e.target.result);
+        applyMobilePhoto(key, e.target.result);
       };
       reader.readAsDataURL(file);
       input.value = '';
     });
   });
 
-  // Remove buttons
-  overlay.querySelectorAll('.photo-slot__remove').forEach(btn => {
+  // Mobile remove buttons
+  overlay.querySelectorAll('.photo-slot__remove[data-slot]').forEach(btn => {
     btn.addEventListener('click', () => {
       const key = btn.dataset.slot;
       localStorage.removeItem('sg_photo_' + key);
-      applyPhoto(key, '');
+      applyMobilePhoto(key, '');
     });
   });
 
   // Clear all
   document.getElementById('photoMgrClearAll').addEventListener('click', () => {
-    SLOTS.forEach(({ key }) => {
+    MOBILE_SLOTS.forEach(({ key }) => {
       localStorage.removeItem('sg_photo_' + key);
-      applyPhoto(key, '');
+      applyMobilePhoto(key, '');
+    });
+    desktopContainer && desktopContainer.querySelectorAll('[data-dkey]').forEach(el => {
+      const key = el.dataset.dkey;
+      if (key) { localStorage.removeItem(key); updateThumb(key, ''); }
     });
   });
 })();

@@ -397,6 +397,17 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 .mega-menu__col ul li a:hover { background: var(--gray-100); color: var(--black); }
 
+/* Coluna de colecoes com scroll quando ha muitos itens */
+.mega-menu__col--collections ul {
+  max-height: 340px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-200) transparent;
+  padding-right: 4px;
+}
+.mega-menu__col--collections ul::-webkit-scrollbar { width: 3px; }
+.mega-menu__col--collections ul::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 2px; }
+
 /* Highlighted — slightly bolder */
 .link-highlight { color: var(--black) !important; }
 .link-top       { color: var(--black) !important; }

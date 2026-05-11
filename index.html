@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saint Germain Brand — Menu de Alta Conversão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="trust-bar">
+    <div class="trust-bar__inner">
+      <a href="#" class="trust-bar__item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.1a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.5l.01.42z"/></svg> Comprar pelo WhatsApp</a>
+      <a href="#" class="trust-bar__item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Grupo VIP SG</a>
+      <a href="#" class="trust-bar__item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Rastrear Pedido</a>
+      <a href="#" class="trust-bar__item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> FAQ</a>
+      <a href="#" class="trust-bar__item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Nossas Lojas</a>
+      <a href="#" class="trust-bar__item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg> Troca Facil</a>
+      <span class="trust-bar__promo">5% OFF na 1a compra — PRIMEIRA05</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header__inner">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/" class="logo"><span class="logo__saint">SAINT</span><span class="logo__germain">GERMAIN</span></a>
+      <div class="search-wrap">
+        <form class="search-form" role="search" autocomplete="off">
+          <svg class="search-form__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="searchInput" class="search-form__input" placeholder='Busque por modelo, cor, estilo… "Tori", "Chelsea Gold"' aria-label="Buscar produtos" aria-autocomplete="list" aria-controls="searchSuggestions" />
+          <button type="button" class="search-form__clear" id="searchClear" aria-label="Limpar" hidden>✕</button>
+        </form>
+        <div class="search-suggestions" id="searchSuggestions" role="listbox" hidden>
+          <p class="search-suggestions__label">Buscas populares</p>
+          <ul class="search-suggestions__list" id="suggestionsList"></ul>
+        </div>
+      </div>
+      <div class="header__actions">
+        <a href="#" class="header__action" aria-label="Minha conta"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+        <a href="#" class="header__action" aria-label="Favoritos"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+        <a href="#" class="header__action header__cart" aria-label="Carrinho"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-badge">3</span></a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav" id="mainNav" aria-label="Navegacao principal">
+    <div class="nav__inner">
+      <ul class="nav__list" role="menubar">
+
+        <!-- RELOGIO FEMININO -->
+        <li class="nav__item has-mega" role="none">
+          <a href="/relogios/relogio-feminino/" class="nav__link" role="menuitem" aria-haspopup="true" aria-expanded="false">Relogio Feminino</a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col mega-menu__col--collections">
+                <h3 class="mega-menu__heading">Por Estilo</h3>
+                <ul>
+                  <li><a href="/relogios/minimalista/"    data-label="Minimalista"    data-sub="Por Estilo" data-cat="watch-silver">Minimalista</a></li>
+                  <li><a href="/relogios/vintage/"        data-label="Vintage"        data-sub="Por Estilo" data-cat="watch-vintage">Vintage</a></li>
+                  <li><a href="/relogios/dourado/"        data-label="Dourado"        data-sub="Por Estilo" data-cat="watch-gold">Dourado</a></li>
+                  <li><a href="/relogios/rose-gold/"      data-label="Rose Gold"      data-sub="Por Estilo" data-cat="watch-rose">Rose Gold</a></li>
+                  <li><a href="/relogios/prata/"          data-label="Prata"          data-sub="Por Estilo" data-cat="watch-silver">Prata</a></li>
+                  <li><a href="/relogios/preto/"          data-label="Preto"          data-sub="Por Estilo" data-cat="watch-black">Preto</a></li>
+                  <li><a href="/relogios/couro/"          data-label="Couro"          data-sub="Por Estilo" data-cat="watch-leather">Couro</a></li>
+                  <li><a href="/relogios/quadrado/"       data-label="Quadrados"      data-sub="Por Estilo" data-cat="watch-black">Quadrados</a></li>
+                  <li><a href="/relogios/cronografo/"     data-label="Cronografo"     data-sub="Por Estilo" data-cat="watch-black">Cronografo</a></li>
+                  <li><a href="/relogios/bicolor/"        data-label="Bicolor"        data-sub="Por Estilo" data-cat="watch-bicolor">Bicolor</a></li>
+                  <li><a href="/relogios/de-pulso/"       data-label="De Pulso"       data-sub="Por Estilo" data-cat="watch-silver">De Pulso</a></li>
+                  <li><a href="/relogios/infantil/"       data-label="Infantil"       data-sub="Por Estilo" data-cat="watch-rose">Infantil</a></li>
+                  <li><a href="/relogios/porta-relogio/"  data-label="Porta Relogio"  data-sub="Por Estilo" data-cat="watch-gold">Porta Relogio</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Por Cor</h3>
+                <ul>
+                  <li><a href="/relogios/relogio-feminino/dourado/"  data-label="Dourado"   data-sub="Colecao" data-cat="watch-gold">Dourado</a></li>
+                  <li><a href="/relogios/relogio-feminino/rose-gold/" data-label="Rose Gold" data-sub="Colecao" data-cat="watch-rose">Rose Gold</a></li>
+                  <li><a href="/relogios/relogio-feminino/prata/"    data-label="Prata"     data-sub="Colecao" data-cat="watch-silver">Prata</a></li>
+                  <li><a href="/relogios/relogio-feminino/preto/"    data-label="Preto"     data-sub="Colecao" data-cat="watch-black">Preto</a></li>
+                  <li><a href="/relogios/relogio-feminino/bicolor/"  data-label="Bicolor"   data-sub="Colecao" data-cat="watch-bicolor">Bicolor</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Destaques</h3>
+                <ul>
+                  <li><a href="/relogios/lancamentos/"       class="link-highlight" data-label="Lancamentos"      data-sub="Novidades"     data-cat="new">Lancamentos</a></li>
+                  <li><a href="/best-seller/"                class="link-highlight" data-label="Best Sellers"     data-sub="Mais vendidos"  data-cat="star">Best Sellers</a></li>
+                  <li><a href="/relogios/relogio-feminino/"  class="link-highlight" data-label="Relogio Feminino" data-sub="Ver tudo"       data-cat="watch-rose">Relogio Feminino</a></li>
+                  <li><a href="/relogios/relogio-masculino/" class="link-highlight" data-label="Relogio Masculino" data-sub="Ver tudo"      data-cat="watch-silver">Relogio Masculino</a></li>
+                  <li><a href="/sale/"                       class="link-sale"      data-label="SALE"             data-sub="Ate 50% OFF"   data-cat="sale">SALE</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__preview" data-preview-panel>
+                <div class="preview-img" data-preview-img></div>
+                <div class="preview-info">
+                  <span class="preview-sub" data-preview-sub></span>
+                  <strong class="preview-label" data-preview-label></strong>
+                  <span class="preview-cta">Ver produtos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- RELOGIO MASCULINO -->
+        <li class="nav__item has-mega" role="none">
+          <a href="/relogios/relogio-masculino/" class="nav__link" role="menuitem" aria-haspopup="true" aria-expanded="false">Relogio Masculino</a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col mega-menu__col--collections">
+                <h3 class="mega-menu__heading">Por Estilo</h3>
+                <ul>
+                  <li><a href="/relogios/minimalista/"    data-label="Minimalista"    data-sub="Por Estilo" data-cat="watch-silver">Minimalista</a></li>
+                  <li><a href="/relogios/vintage/"        data-label="Vintage"        data-sub="Por Estilo" data-cat="watch-vintage">Vintage</a></li>
+                  <li><a href="/relogios/dourado/"        data-label="Dourado"        data-sub="Por Estilo" data-cat="watch-gold">Dourado</a></li>
+                  <li><a href="/relogios/rose-gold/"      data-label="Rose Gold"      data-sub="Por Estilo" data-cat="watch-rose">Rose Gold</a></li>
+                  <li><a href="/relogios/prata/"          data-label="Prata"          data-sub="Por Estilo" data-cat="watch-silver">Prata</a></li>
+                  <li><a href="/relogios/preto/"          data-label="Preto"          data-sub="Por Estilo" data-cat="watch-black">Preto</a></li>
+                  <li><a href="/relogios/couro/"          data-label="Couro"          data-sub="Por Estilo" data-cat="watch-leather">Couro</a></li>
+                  <li><a href="/relogios/quadrado/"       data-label="Quadrados"      data-sub="Por Estilo" data-cat="watch-black">Quadrados</a></li>
+                  <li><a href="/relogios/cronografo/"     data-label="Cronografo"     data-sub="Por Estilo" data-cat="watch-black">Cronografo</a></li>
+                  <li><a href="/relogios/bicolor/"        data-label="Bicolor"        data-sub="Por Estilo" data-cat="watch-bicolor">Bicolor</a></li>
+                  <li><a href="/relogios/de-pulso/"       data-label="De Pulso"       data-sub="Por Estilo" data-cat="watch-silver">De Pulso</a></li>
+                  <li><a href="/relogios/infantil/"       data-label="Infantil"       data-sub="Por Estilo" data-cat="watch-rose">Infantil</a></li>
+                  <li><a href="/relogios/porta-relogio/"  data-label="Porta Relogio"  data-sub="Por Estilo" data-cat="watch-gold">Porta Relogio</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Por Cor</h3>
+                <ul>
+                  <li><a href="/relogios/relogio-masculino/preto/"   data-label="Preto"   data-sub="Cor" data-cat="watch-black">Preto</a></li>
+                  <li><a href="/relogios/relogio-masculino/prata/"   data-label="Prata"   data-sub="Cor" data-cat="watch-silver">Prata</a></li>
+                  <li><a href="/relogios/relogio-masculino/dourado/" data-label="Dourado" data-sub="Cor" data-cat="watch-gold">Dourado</a></li>
+                  <li><a href="/relogios/relogio-masculino/couro/"   data-label="Couro"   data-sub="Cor" data-cat="watch-leather">Couro</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Destaques</h3>
+                <ul>
+                  <li><a href="/relogios/lancamentos/"       class="link-highlight" data-label="Lancamentos"      data-sub="Novidades"     data-cat="new">Lancamentos</a></li>
+                  <li><a href="/best-seller/"                class="link-highlight" data-label="Best Sellers"     data-sub="Mais vendidos"  data-cat="star">Best Sellers</a></li>
+                  <li><a href="/relogios/relogio-feminino/"  class="link-highlight" data-label="Relogio Feminino" data-sub="Ver tudo"       data-cat="watch-rose">Relogio Feminino</a></li>
+                  <li><a href="/relogios/relogio-masculino/" class="link-highlight" data-label="Relogio Masculino" data-sub="Ver tudo"      data-cat="watch-silver">Relogio Masculino</a></li>
+                  <li><a href="/sale/"                       class="link-sale"      data-label="SALE"             data-sub="Ate 50% OFF"   data-cat="sale">SALE</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__preview" data-preview-panel>
+                <div class="preview-img" data-preview-img></div>
+                <div class="preview-info">
+                  <span class="preview-sub" data-preview-sub></span>
+                  <strong class="preview-label" data-preview-label></strong>
+                  <span class="preview-cta">Ver produtos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- RELOGIOS -->
+        <li class="nav__item has-mega" role="none">
+          <a href="/relogios/" class="nav__link" role="menuitem" aria-haspopup="true" aria-expanded="false">Relogios</a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col mega-menu__col--collections">
+                <h3 class="mega-menu__heading">Colecoes</h3>
+                <ul>
+                  <li><a href="/relogios/mini-belle/"        class="link-top" data-label="Mini Belle"       data-sub="Colecao" data-cat="watch-gold">Mini Belle</a></li>
+                  <li><a href="/relogios/madison/"                            data-label="Madison"           data-sub="Colecao" data-cat="watch-rose">Madison</a></li>
+                  <li><a href="/relogios/petite-madison/"                     data-label="Petite Madison"    data-sub="Colecao" data-cat="watch-rose">Petite Madison</a></li>
+                  <li><a href="/relogios/petite/"                             data-label="Petite"            data-sub="Colecao" data-cat="watch-rose">Petite</a></li>
+                  <li><a href="/relogios/shine/"                              data-label="Shine"             data-sub="Colecao" data-cat="watch-gold">Shine</a></li>
+                  <li><a href="/relogios/celeste/"                            data-label="Celeste"           data-sub="Colecao" data-cat="watch-silver">Celeste</a></li>
+                  <li><a href="/relogios/octavia/"                            data-label="Octavia"           data-sub="Colecao" data-cat="watch-silver">Octavia</a></li>
+                  <li><a href="/relogios/oval-mini/"                          data-label="Oval Mini"         data-sub="Colecao" data-cat="watch-rose">Oval Mini</a></li>
+                  <li><a href="/relogios/versailles/"                         data-label="Versailles"        data-sub="Colecao" data-cat="watch-gold">Versailles</a></li>
+                  <li><a href="/relogios/bellevie/"                           data-label="Bellevie"          data-sub="Colecao" data-cat="watch-rose">Bellevie</a></li>
+                  <li><a href="/relogios/astoria/"                            data-label="Astoria"           data-sub="Colecao" data-cat="watch-gold">Astoria</a></li>
+                  <li><a href="/relogios/bastille/"                           data-label="Bastille"          data-sub="Colecao" data-cat="watch-black">Bastille</a></li>
+                  <li><a href="/relogios/louvre/"                             data-label="Louvre"            data-sub="Colecao" data-cat="watch-gold">Louvre</a></li>
+                  <li><a href="/relogios/classicos-romanos/"                  data-label="Classicos Romanos" data-sub="Colecao" data-cat="watch-gold">Classicos Romanos</a></li>
+                  <li><a href="/relogios/hudson/"                             data-label="Hudson"            data-sub="Colecao" data-cat="watch-black">Hudson</a></li>
+                  <li><a href="/relogios/vermont/"                            data-label="Vermont"           data-sub="Colecao" data-cat="watch-leather">Vermont</a></li>
+                  <li><a href="/relogios/moncler/"                            data-label="Moncler"           data-sub="Colecao" data-cat="watch-silver">Moncler</a></li>
+                  <li><a href="/relogios/classicos-metal/"                    data-label="Classicos Metal"   data-sub="Colecao" data-cat="watch-silver">Classicos Metal</a></li>
+                  <li><a href="/relogios/classicos-couro/"                    data-label="Classicos Couro"   data-sub="Colecao" data-cat="watch-leather">Classicos Couro</a></li>
+                  <li><a href="/relogios/vintage/"                            data-label="Vintage"           data-sub="Colecao" data-cat="watch-vintage">Vintage</a></li>
+                  <li><a href="/relogios/square/"                             data-label="Square"            data-sub="Colecao" data-cat="watch-black">Square</a></li>
+                  <li><a href="/relogios/mini-square/"                        data-label="Mini Square"       data-sub="Colecao" data-cat="watch-silver">Mini Square</a></li>
+                  <li><a href="/relogios/octa-mini/"                          data-label="Octa Mini"         data-sub="Colecao" data-cat="watch-silver">Octa Mini</a></li>
+                  <li><a href="/relogios/belmont/"                            data-label="Belmont"           data-sub="Colecao" data-cat="watch-black">Belmont</a></li>
+                  <li><a href="/relogios/belmont-date/"                       data-label="Belmont Date"      data-sub="Colecao" data-cat="watch-black">Belmont Date</a></li>
+                  <li><a href="/relogios/chrono/"                             data-label="Chrono"            data-sub="Colecao" data-cat="watch-black">Chrono</a></li>
+                  <li><a href="/relogios/boxy/"                               data-label="Boxy"              data-sub="Colecao" data-cat="watch-black">Boxy</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Por Cor</h3>
+                <ul>
+                  <li><a href="/relogios/dourado/"  data-label="Dourado"   data-sub="Cor" data-cat="watch-gold">Dourado</a></li>
+                  <li><a href="/relogios/rose-gold/" data-label="Rose Gold" data-sub="Cor" data-cat="watch-rose">Rose Gold</a></li>
+                  <li><a href="/relogios/prata/"    data-label="Prata"     data-sub="Cor" data-cat="watch-silver">Prata</a></li>
+                  <li><a href="/relogios/preto/"    data-label="Preto"     data-sub="Cor" data-cat="watch-black">Preto</a></li>
+                  <li><a href="/relogios/bicolor/"  data-label="Bicolor"   data-sub="Cor" data-cat="watch-bicolor">Bicolor</a></li>
+                  <li><a href="/relogios/couro/"    data-label="Couro"     data-sub="Cor" data-cat="watch-leather">Couro</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Destaques</h3>
+                <ul>
+                  <li><a href="/relogios/lancamentos/"       class="link-highlight" data-label="Lancamentos"      data-sub="Novidades"     data-cat="new">Lancamentos</a></li>
+                  <li><a href="/best-seller/"                class="link-highlight" data-label="Best Sellers"     data-sub="Mais vendidos"  data-cat="star">Best Sellers</a></li>
+                  <li><a href="/relogios/relogio-feminino/"  class="link-highlight" data-label="Relogio Feminino" data-sub="Ver tudo"       data-cat="watch-rose">Relogio Feminino</a></li>
+                  <li><a href="/relogios/relogio-masculino/" class="link-highlight" data-label="Relogio Masculino" data-sub="Ver tudo"      data-cat="watch-silver">Relogio Masculino</a></li>
+                  <li><a href="/sale/"                       class="link-sale"      data-label="SALE"             data-sub="Ate 50% OFF"   data-cat="sale">SALE</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__preview" data-preview-panel>
+                <div class="preview-img" data-preview-img></div>
+                <div class="preview-info">
+                  <span class="preview-sub" data-preview-sub></span>
+                  <strong class="preview-label" data-preview-label></strong>
+                  <span class="preview-cta">Ver produtos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- OCULOS -->
+        <li class="nav__item has-mega" role="none">
+          <a href="/oculos/" class="nav__link" role="menuitem" aria-haspopup="true" aria-expanded="false">Oculos</a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Oculos de Sol</h3>
+                <ul>
+                  <li><a href="/oculos/oculos-de-sol/oculos-de-sol-feminino/"    class="link-highlight" data-label="Sol Feminino"   data-sub="Oculos de Sol" data-cat="glasses-sol-f">Feminino</a></li>
+                  <li><a href="/oculos/oculos-de-sol/oculos-de-sol-masculino/"                          data-label="Sol Masculino"  data-sub="Oculos de Sol" data-cat="glasses-sol-m">Masculino</a></li>
+                  <li><a href="/oculos/oculos-de-sol/oculos-de-sol-lancamentos/" class="link-highlight" data-label="Lancamentos"    data-sub="Oculos de Sol" data-cat="new">Lancamentos</a></li>
+                  <li><a href="/oculos/oculos-de-sol/">Ver todos</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Oculos de Grau</h3>
+                <ul>
+                  <li><a href="/oculos/oculos-de-grau/oculos-de-grau-feminino/"    class="link-highlight" data-label="Grau Feminino"  data-sub="Oculos de Grau" data-cat="glasses-grau-f">Feminino</a></li>
+                  <li><a href="/oculos/oculos-de-grau/oculos-de-grau-masculino/"                          data-label="Grau Masculino" data-sub="Oculos de Grau" data-cat="glasses-grau-m">Masculino</a></li>
+                  <li><a href="/oculos/oculos-de-grau/oculos-de-grau-lancamentos/" class="link-highlight" data-label="Lancamentos"    data-sub="Oculos de Grau" data-cat="new">Lancamentos</a></li>
+                  <li><a href="/oculos/oculos-de-grau/">Ver todos</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Por Formato</h3>
+                <ul>
+                  <li><a href="/oculos/oval/"    data-label="Oval"    data-sub="Formato" data-cat="glasses-oval">Oval</a></li>
+                  <li><a href="/oculos/aviador/" data-label="Aviador" data-sub="Formato" data-cat="glasses-aviador">Aviador</a></li>
+                  <li><a href="/oculos/boxy/"    data-label="Boxy"    data-sub="Formato" data-cat="glasses-boxy">Boxy / Quadrado</a></li>
+                  <li><a href="/oculos/redondo/" data-label="Redondo" data-sub="Formato" data-cat="glasses-round">Redondo</a></li>
+                  <li><a href="/oculos/gatinho/" data-label="Gatinho" data-sub="Formato" data-cat="glasses-cat">Gatinho</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Colecoes</h3>
+                <ul>
+                  <li><a href="/oculos/siena/" class="link-top" data-label="Siena Tartaruga" data-sub="Colecao" data-cat="glasses-tort">Siena Tartaruga</a></li>
+                  <li><a href="/oculos/capri/"                  data-label="Capri"            data-sub="Colecao" data-cat="glasses-sol-f">Capri</a></li>
+                  <li><a href="/oculos/duna/"                   data-label="Duna"             data-sub="Colecao" data-cat="glasses-grau-f">Duna</a></li>
+                  <li><a href="/oculos/ibiza/"                  data-label="Ibiza"            data-sub="Colecao" data-cat="glasses-sol-m">Ibiza</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__preview" data-preview-panel>
+                <div class="preview-img" data-preview-img></div>
+                <div class="preview-info">
+                  <span class="preview-sub" data-preview-sub></span>
+                  <strong class="preview-label" data-preview-label></strong>
+                  <span class="preview-cta">Ver produtos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- LANCAMENTOS -->
+        <li class="nav__item has-dropdown" role="none">
+          <a href="#" class="nav__link nav__link--new" role="menuitem" aria-haspopup="true" aria-expanded="false">Lancamentos</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="/relogios/lancamentos/">Relogios Novos</a></li>
+              <li><a href="/oculos/oculos-de-sol/oculos-de-sol-lancamentos/">Oculos de Sol Novos</a></li>
+              <li><a href="/oculos/oculos-de-grau/oculos-de-grau-lancamentos/">Oculos de Grau Novos</a></li>
+              <li><a href="/joias/lancamentos/">Joias Novas</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- BEST SELLERS -->
+        <li class="nav__item has-dropdown" role="none">
+          <a href="/best-seller/" class="nav__link" role="menuitem" aria-haspopup="true" aria-expanded="false">Best Sellers</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="/24h-best-sellers-124/">24h Top Produtos</a></li>
+              <li><a href="/best-seller/">Todos os Best Sellers</a></li>
+              <li><a href="/relogios/relogio-feminino/?sort=best_selling">Relogios Femininos</a></li>
+              <li><a href="/relogios/relogio-masculino/?sort=best_selling">Relogios Masculinos</a></li>
+              <li><a href="/oculos/?sort=best_selling">Oculos</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- JOIAS -->
+        <li class="nav__item has-dropdown" role="none">
+          <a href="/joias/" class="nav__link" role="menuitem" aria-haspopup="true" aria-expanded="false">Joias</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="/joias/anel/">Aneis</a></li>
+              <li><a href="/joias/colar/">Colares</a></li>
+              <li><a href="/joias/pulseira/">Pulseiras</a></li>
+              <li><a href="/joias/brinco/">Brincos</a></li>
+              <li><a href="/joias/lancamentos/">Lancamentos</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- PRESENTES -->
+        <li class="nav__item has-mega" role="none">
+          <a href="/presentes/" class="nav__link" role="menuitem" aria-haspopup="true" aria-expanded="false">Presentes</a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Para ela</h3>
+                <ul>
+                  <li><a href="/presentes/para-mulher/"   data-label="Para ela"      data-sub="Presentes" data-cat="gift-f">Relogio para ela</a></li>
+                  <li><a href="/presentes/para-namorada/" data-label="Namorada"      data-sub="Presentes" data-cat="gift-f">Para namorada</a></li>
+                  <li><a href="/presentes/para-amiga/"    data-label="Para amiga"    data-sub="Presentes" data-cat="gift-f">Para amiga</a></li>
+                  <li><a href="/presentes/para-mae/"      data-label="Para a mae"    data-sub="Presentes" data-cat="gift-f">Para a mae</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Para ele</h3>
+                <ul>
+                  <li><a href="/presentes/para-homem/"    data-label="Para ele"      data-sub="Presentes" data-cat="gift-m">Relogio para ele</a></li>
+                  <li><a href="/presentes/para-namorado/" data-label="Namorado"      data-sub="Presentes" data-cat="gift-m">Para namorado</a></li>
+                  <li><a href="/presentes/para-pai/"      data-label="Para o pai"    data-sub="Presentes" data-cat="gift-m">Para o pai</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Kits e Ofertas</h3>
+                <ul>
+                  <li><a href="/presentes/kits/"              data-label="Kit Presente"       data-sub="Oferta" data-cat="gift-kit">Kits Presente</a></li>
+                  <li><a href="/24h-best-sellers-124/"        data-label="24h Melhores Precos" data-sub="Oferta" data-cat="sale">24h Melhores Precos</a></li>
+                  <li><a href="/24h-24-produtos-por-r19990/"  data-label="24 por R$199"        data-sub="Oferta" data-cat="sale">24 produtos por R$199</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__col">
+                <h3 class="mega-menu__heading">Por Ocasiao</h3>
+                <ul>
+                  <li><a href="/presentes/dia-das-maes/"      data-label="Dia das Maes"       data-sub="Ocasiao" data-cat="gift-f">Dia das Maes</a></li>
+                  <li><a href="/presentes/dia-dos-namorados/" data-label="Dia dos Namorados"  data-sub="Ocasiao" data-cat="gift-f">Dia dos Namorados</a></li>
+                  <li><a href="/presentes/natal/"             data-label="Natal"              data-sub="Ocasiao" data-cat="gift-kit">Natal</a></li>
+                  <li><a href="/presentes/aniversario/"       data-label="Aniversario"        data-sub="Ocasiao" data-cat="gift-f">Aniversario</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu__preview" data-preview-panel>
+                <div class="preview-img" data-preview-img></div>
+                <div class="preview-info">
+                  <span class="preview-sub" data-preview-sub></span>
+                  <strong class="preview-label" data-preview-label></strong>
+                  <span class="preview-cta">Ver produtos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- SALE -->
+        <li class="nav__item" role="none">
+          <a href="/sale/" class="nav__link nav__link--sale" role="menuitem">SALE <span class="sale-badge">ate 50% OFF</span></a>
+        </li>
+
+        <!-- BLOG -->
+        <li class="nav__item" role="none">
+          <a href="/blog/" class="nav__link nav__link--muted" role="menuitem">Blog</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer__header">
+      <span class="logo"><span class="logo__saint">SAINT</span><span class="logo__germain">GERMAIN</span></span>
+      <button class="mobile-drawer__close" id="drawerClose" aria-label="Fechar menu">✕</button>
+    </div>
+    <div class="mobile-drawer__search">
+      <form class="search-form search-form--mobile" role="search" autocomplete="off">
+        <svg class="search-form__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" class="search-form__input" placeholder='Busque: "Tori", "Chelsea Gold"…' aria-label="Buscar produtos" />
+      </form>
+    </div>
+    <nav class="mobile-nav" aria-label="Menu mobile">
+
+      <!-- ── Foto cards por categoria ── -->
+      <div class="mobile-cat-strip">
+        <a href="/relogios/relogio-feminino/" class="mobile-cat-card">
+          <div class="mobile-cat-card__img">
+            <!-- FOTO: Relogio Feminino (ex: 360x480px) -->
+            <img src="" alt="Relogio Feminino" />
+          </div>
+          <span class="mobile-cat-card__label">Rel. Feminino</span>
+        </a>
+        <a href="/relogios/relogio-masculino/" class="mobile-cat-card">
+          <div class="mobile-cat-card__img">
+            <!-- FOTO: Relogio Masculino (ex: 360x480px) -->
+            <img src="" alt="Relogio Masculino" />
+          </div>
+          <span class="mobile-cat-card__label">Rel. Masculino</span>
+        </a>
+        <a href="/oculos/" class="mobile-cat-card">
+          <div class="mobile-cat-card__img">
+            <!-- FOTO: Oculos (ex: 360x480px) -->
+            <img src="" alt="Oculos" />
+          </div>
+          <span class="mobile-cat-card__label">Oculos</span>
+        </a>
+        <a href="/relogios/lancamentos/" class="mobile-cat-card">
+          <div class="mobile-cat-card__img">
+            <!-- FOTO: Lancamentos (ex: 360x480px) -->
+            <img src="" alt="Lancamentos" />
+          </div>
+          <span class="mobile-cat-card__label">Lancamentos</span>
+        </a>
+        <a href="/sale/" class="mobile-cat-card mobile-cat-card--sale">
+          <div class="mobile-cat-card__img">
+            <!-- FOTO: SALE (ex: 360x480px) -->
+            <img src="" alt="SALE" />
+          </div>
+          <span class="mobile-cat-card__label">SALE</span>
+        </a>
+      </div>
+
+      <!-- ── Accordion nav ── -->
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item mobile-nav__item--expandable">
+          <button class="mobile-nav__toggle" aria-expanded="false">Relogio Feminino <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="mobile-nav__sub" hidden>
+            <li><a href="/relogios/relogio-feminino/bracelete/">Bracelete</a></li>
+            <li><a href="/relogios/chelsea-gold/">Chelsea Gold</a></li>
+            <li><a href="/relogios/harlem-silver/">Harlem Silver</a></li>
+            <li><a href="/relogios/tori/">Tori</a></li>
+            <li><a href="/relogios/mini-belle/">Mini Belle</a></li>
+            <li><a href="/relogios/lancamentos/">Lancamentos</a></li>
+            <li><a href="/relogios/relogio-feminino/">Ver tudo</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--expandable">
+          <button class="mobile-nav__toggle" aria-expanded="false">Relogio Masculino <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="mobile-nav__sub" hidden>
+            <li><a href="/relogios/murray-full-black/">Murray Full Black</a></li>
+            <li><a href="/relogios/ibiza/">Ibiza</a></li>
+            <li><a href="/relogios/napoli/">Napoli</a></li>
+            <li><a href="/relogios/lancamentos/">Lancamentos</a></li>
+            <li><a href="/relogios/relogio-masculino/">Ver tudo</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--expandable">
+          <button class="mobile-nav__toggle" aria-expanded="false">Relogios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="mobile-nav__sub" hidden>
+            <li><a href="/relogios/mini-belle/">Mini Belle</a></li>
+            <li><a href="/relogios/classicos-metal/">Classicos Metal</a></li>
+            <li><a href="/relogios/belmont/">Belmont</a></li>
+            <li><a href="/relogios/vintage/">Vintage</a></li>
+            <li><a href="/relogios/lancamentos/">Lancamentos</a></li>
+            <li><a href="/relogios/">Ver tudo</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--expandable">
+          <button class="mobile-nav__toggle" aria-expanded="false">Oculos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="mobile-nav__sub" hidden>
+            <li><a href="/oculos/oculos-de-sol/oculos-de-sol-feminino/">Sol Feminino</a></li>
+            <li><a href="/oculos/oculos-de-sol/oculos-de-sol-masculino/">Sol Masculino</a></li>
+            <li><a href="/oculos/oculos-de-grau/oculos-de-grau-feminino/">Grau Feminino</a></li>
+            <li><a href="/oculos/siena/">Siena Tartaruga</a></li>
+            <li><a href="/oculos/">Ver tudo</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item"><a href="#" class="mobile-nav__link mobile-nav__link--new">Lancamentos</a></li>
+        <li class="mobile-nav__item"><a href="/best-seller/" class="mobile-nav__link">Best Sellers</a></li>
+        <li class="mobile-nav__item mobile-nav__item--expandable">
+          <button class="mobile-nav__toggle" aria-expanded="false">Joias <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="mobile-nav__sub" hidden>
+            <li><a href="/joias/anel/">Aneis</a></li>
+            <li><a href="/joias/colar/">Colares</a></li>
+            <li><a href="/joias/pulseira/">Pulseiras</a></li>
+            <li><a href="/joias/brinco/">Brincos</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__item"><a href="/presentes/" class="mobile-nav__link">Presentes</a></li>
+        <li class="mobile-nav__item"><a href="/sale/" class="mobile-nav__link mobile-nav__link--sale">SALE — ate 50% OFF</a></li>
+        <li class="mobile-nav__item"><a href="/blog/" class="mobile-nav__link">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-drawer__footer">
+      <a href="#">WhatsApp</a>
+      <a href="/rastreio/">Rastrear Pedido</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <main class="demo-hero">
+    <p class="demo-hero__label">Previa do Menu — Saint Germain Brand</p>
+    <h1>Menu de Alta Conversao</h1>
+    <p>Passe o mouse sobre os itens do submenu para ver o preview de produto.</p>
+    <div class="demo-hero__tags">
+      <span>Relogio Feminino como item principal</span>
+      <span>Relogio Masculino como item principal</span>
+      <span>Oculos unificado com submenu por dados</span>
+      <span>Lancamentos em destaque</span>
+      <span>Preview de produto ao hover</span>
+      <span>SALE com badge animado</span>
+      <span>Drawer mobile otimizado</span>
+    </div>
+  </main>
+
+  <!-- Painel de upload de fotos -->
+  <button class="photo-mgr-btn" id="photoMgrBtn">Fotos do Menu</button>
+
+  <div class="photo-mgr-overlay" id="photoMgrOverlay">
+    <div class="photo-mgr-panel">
+      <div class="photo-mgr-panel__header">
+        <span class="photo-mgr-panel__title">Fotos do Menu</span>
+        <button class="photo-mgr-panel__close" id="photoMgrClose">✕</button>
+      </div>
+      <div class="photo-mgr-panel__body">
+
+        <div class="photo-slot" data-slot="cat-rel-f">
+          <div class="photo-slot__thumb"><img id="thumb-cat-rel-f" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Relogio Feminino</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-rel-f" /></label>
+              <button class="photo-slot__remove" data-slot="cat-rel-f">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-rel-m">
+          <div class="photo-slot__thumb"><img id="thumb-cat-rel-m" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Relogio Masculino</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-rel-m" /></label>
+              <button class="photo-slot__remove" data-slot="cat-rel-m">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-oculos">
+          <div class="photo-slot__thumb"><img id="thumb-cat-oculos" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Oculos</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-oculos" /></label>
+              <button class="photo-slot__remove" data-slot="cat-oculos">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-lanc">
+          <div class="photo-slot__thumb"><img id="thumb-cat-lanc" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Lancamentos</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-lanc" /></label>
+              <button class="photo-slot__remove" data-slot="cat-lanc">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-sale">
+          <div class="photo-slot__thumb"><img id="thumb-cat-sale" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Sale</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-sale" /></label>
+              <button class="photo-slot__remove" data-slot="cat-sale">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop subcategory slots — populated by JS -->
+        <div class="photo-mgr-sep"><span>Desktop — Preview ao Hover</span></div>
+        <div id="photoMgrDesktopSlots"></div>
+
+      </div>
+      <div class="photo-mgr-panel__footer">
+        <button class="photo-mgr-panel__clear" id="photoMgrClearAll">Limpar tudo</button>
+        <button class="photo-mgr-panel__save" id="photoMgrClose2">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="menu.js"></script>
+</body>
+</html>

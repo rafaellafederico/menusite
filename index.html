@@ -449,6 +449,80 @@
     </div>
   </main>
 
+  <!-- Painel de upload de fotos -->
+  <button class="photo-mgr-btn" id="photoMgrBtn">Fotos do Menu</button>
+
+  <div class="photo-mgr-overlay" id="photoMgrOverlay">
+    <div class="photo-mgr-panel">
+      <div class="photo-mgr-panel__header">
+        <span class="photo-mgr-panel__title">Fotos do Menu Mobile</span>
+        <button class="photo-mgr-panel__close" id="photoMgrClose">✕</button>
+      </div>
+      <div class="photo-mgr-panel__body">
+
+        <div class="photo-slot" data-slot="cat-rel-f">
+          <div class="photo-slot__thumb"><img id="thumb-cat-rel-f" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Relogio Feminino</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-rel-f" /></label>
+              <button class="photo-slot__remove" data-slot="cat-rel-f">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-rel-m">
+          <div class="photo-slot__thumb"><img id="thumb-cat-rel-m" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Relogio Masculino</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-rel-m" /></label>
+              <button class="photo-slot__remove" data-slot="cat-rel-m">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-oculos">
+          <div class="photo-slot__thumb"><img id="thumb-cat-oculos" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Oculos</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-oculos" /></label>
+              <button class="photo-slot__remove" data-slot="cat-oculos">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-lanc">
+          <div class="photo-slot__thumb"><img id="thumb-cat-lanc" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Lancamentos</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-lanc" /></label>
+              <button class="photo-slot__remove" data-slot="cat-lanc">Remover</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-slot" data-slot="cat-sale">
+          <div class="photo-slot__thumb"><img id="thumb-cat-sale" src="" alt="" /><span class="photo-slot__empty-txt">Foto</span></div>
+          <div class="photo-slot__info">
+            <span class="photo-slot__name">Sale</span>
+            <div class="photo-slot__actions">
+              <label class="photo-slot__label">Escolher foto <input type="file" accept="image/*" data-slot="cat-sale" /></label>
+              <button class="photo-slot__remove" data-slot="cat-sale">Remover</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="photo-mgr-panel__footer">
+        <button class="photo-mgr-panel__clear" id="photoMgrClearAll">Limpar tudo</button>
+        <button class="photo-mgr-panel__save" id="photoMgrClose2">Fechar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="menu.js"></script>
 </body>
 </html>

@@ -199,6 +199,84 @@ const POPULAR_SEARCHES = [
   });
 })();
 
+// ── Photo manager ─────────────────────────────────────────────────────────
+(function initPhotoManager() {
+  const SLOTS = [
+    { key: 'cat-rel-f',  cardIdx: 0 },
+    { key: 'cat-rel-m',  cardIdx: 1 },
+    { key: 'cat-oculos', cardIdx: 2 },
+    { key: 'cat-lanc',   cardIdx: 3 },
+    { key: 'cat-sale',   cardIdx: 4 },
+  ];
+  const cards = document.querySelectorAll('.mobile-cat-card');
+
+  function applyPhoto(key, dataUrl) {
+    const slot = SLOTS.find(s => s.key === key);
+    if (!slot) return;
+    const card = cards[slot.cardIdx];
+    if (card) card.querySelector('img').src = dataUrl || '';
+    const thumb = document.getElementById('thumb-' + key);
+    if (thumb) {
+      thumb.src = dataUrl || '';
+      thumb.classList.toggle('has-photo', !!dataUrl);
+      const emptyTxt = thumb.parentElement.querySelector('.photo-slot__empty-txt');
+      if (emptyTxt) emptyTxt.style.display = dataUrl ? 'none' : '';
+    }
+  }
+
+  // Apply stored photos on load
+  SLOTS.forEach(({ key }) => {
+    const stored = localStorage.getItem('sg_photo_' + key);
+    if (stored) applyPhoto(key, stored);
+  });
+
+  // Panel open/close
+  const overlay  = document.getElementById('photoMgrOverlay');
+  const openBtn  = document.getElementById('photoMgrBtn');
+  const closeBtn = document.getElementById('photoMgrClose');
+  const closeBtn2= document.getElementById('photoMgrClose2');
+  if (!overlay || !openBtn) return;
+
+  openBtn.addEventListener('click',  () => overlay.classList.add('is-open'));
+  closeBtn.addEventListener('click', () => overlay.classList.remove('is-open'));
+  closeBtn2.addEventListener('click',() => overlay.classList.remove('is-open'));
+  overlay.addEventListener('click',  e => { if (e.target === overlay) overlay.classList.remove('is-open'); });
+
+  // File inputs
+  overlay.querySelectorAll('input[type="file"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      const key  = input.dataset.slot;
+      if (!file || !key) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const dataUrl = e.target.result;
+        localStorage.setItem('sg_photo_' + key, dataUrl);
+        applyPhoto(key, dataUrl);
+      };
+      reader.readAsDataURL(file);
+      input.value = '';
+    });
+  });
+
+  // Remove buttons
+  overlay.querySelectorAll('.photo-slot__remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.slot;
+      localStorage.removeItem('sg_photo_' + key);
+      applyPhoto(key, '');
+    });
+  });
+
+  // Clear all
+  document.getElementById('photoMgrClearAll').addEventListener('click', () => {
+    SLOTS.forEach(({ key }) => {
+      localStorage.removeItem('sg_photo_' + key);
+      applyPhoto(key, '');
+    });
+  });
+})();
+
 // ── Search ────────────────────────────────────────────────────────────────
 (function initSearch() {
   const input          = document.getElementById('searchInput');
